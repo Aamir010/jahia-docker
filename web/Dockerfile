@@ -1,6 +1,6 @@
 FROM centos:7
 
-MAINTAINER Aamir <Aamir@nexteonsolutions.com>
+MAINTAINER Aamir <Aamir010@hotmail.com>
 
 RUN yum install unzip epel-repo wget -y
 
