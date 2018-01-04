@@ -1,7 +1,7 @@
 version: '2'
 services:
   web:
-    image: jahia-web
+    build: ./web
     hostname: Jahia-CMS
     ports:
       - "8080:8080"
@@ -11,7 +11,7 @@ services:
       - db:db
 
   db:
-    image: jahia-db
+    build: ./db
     hostname: Jahia-DB
     environment:
       - CREATEDB=true
