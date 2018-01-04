@@ -6,12 +6,6 @@ Dockerfile
 .dockerignore
 
 #
-# Repo
-#
-
-README.md
-
-#
 # OS X
 #
 
