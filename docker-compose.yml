@@ -13,8 +13,6 @@ services:
   db:
     image: jahia-db
     hostname: Jahia-DB
-    ports:
-      - "3306:3306"
     environment:
       - CREATEDB=true
       - MYSQL_CLIENT=%
