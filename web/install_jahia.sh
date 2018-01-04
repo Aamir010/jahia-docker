@@ -1,11 +1,19 @@
 #!/bin/bash
 
-sleep 10
+if [ -d "Jahia" ]; then
 
-java -jar DigitalExperienceManager.jar /tmp/auto-install.xml
+  cd /opt/Jahia
 
-ln -s /usr/local/DigitalExperienceManager-EnterpriseDistribution-7.1.1.0 /usr/local/DigitalExperienceManager
+  sh start.sh
 
-cd /usr/local/DigitalExperienceManager
+else
 
-sh start.sh
+ sleep 10
+
+ java -jar DigitalExperienceManager.jar auto-install.xml
+
+  cd /opt/Jahia
+
+  sh start.sh
+
+fi

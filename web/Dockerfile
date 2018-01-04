@@ -1,26 +1,27 @@
-FROM centos:7
+FROM maven:3.5.2-jdk-8-alpine
 
 MAINTAINER Aamir <Aamir010@hotmail.com>
 
-RUN yum install unzip epel-repo wget -y
+#Copy config file
+COPY . /opt
 
-COPY . /tmp/
+#Update wget
+RUN apk update \
+   && apk add ca-certificates \
+   && update-ca-certificates \
+   && apk add --update openssl
 
-#Install Java-8
-WORKDIR /tmp
-RUN rpm -ivh jdk-8u11-linux-x64.rpm
-
-#Install Maven 3.3
+#Change Directory
 WORKDIR /opt
-RUN unzip /tmp/apache-maven-3.3.3-bin.zip
-RUN mv apache-maven-3.3.3 maven
-RUN cp /tmp/maven.sh /etc/profile.d/maven.sh
-RUN chmod +x /etc/profile.d/maven.sh
-RUN source /etc/profile.d/maven.sh
+
+RUN  wget -q https://www.jahia.com/downloads/jahia/digitalexperiencemanager7.2.1/DigitalExperienceManager-EnterpriseDistribution-7.2.1.1-r56757.4188.jar \
+    && wget -q http://search.maven.org/remotecontent\?filepath\=mysql/mysql-connector-java/5.1.42/mysql-connector-java-5.1.42.jar
+
+RUN mv DigitalExperienceManager* DigitalExperienceManager.jar
 
 #Installing Jahia
-WORKDIR /tmp
+WORKDIR /opt
 EXPOSE 8080
 RUN chmod +x install_jahia.sh
 
-CMD ["./install_jahia.sh"]
+ENTRYPOINT ["./install_jahia.sh"]

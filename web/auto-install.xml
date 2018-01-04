@@ -3,7 +3,7 @@
 <com.izforge.izpack.panels.HelloPanel id="UNKNOWN (com.izforge.izpack.panels.HelloPanel)"/>
 <com.izforge.izpack.panels.LicencePanel id="UNKNOWN (com.izforge.izpack.panels.LicencePanel)"/>
 <com.izforge.izpack.panels.TargetPanel id="UNKNOWN (com.izforge.izpack.panels.TargetPanel)">
-<installpath>/usr/local/DigitalExperienceManager-EnterpriseDistribution-7.1.1.0</installpath>
+<installpath>/opt/Jahia</installpath>
 </com.izforge.izpack.panels.TargetPanel>
 <com.izforge.izpack.panels.UserInputPanel id="installType">
 <userInput>
@@ -29,7 +29,7 @@
 </com.izforge.izpack.panels.UserInputPanel>
 <com.izforge.izpack.panels.UserInputPanel id="dbTypeMySQL">
 <userInput>
-<entry key="mysql.driver.path" value="/tmp/mysql-connector-java-5.1.35.jar"/>
+<entry key="mysql.driver.path" value="mysql-connector-java-5.1.42.jar"/>
 <entry key="mysql.driver.license" value="true"/>
 </userInput>
 </com.izforge.izpack.panels.UserInputPanel>
@@ -47,6 +47,7 @@
 <userInput>
 <entry key="jahiaManager.password" value="jahia"/>
 <entry key="jahiaManager.username" value="jahia"/>
+<entry key="karaf.remoteShell.port" value="8101"/>
 <entry key="jahia.war.contextName" value=""/>
 </userInput>
 </com.izforge.izpack.panels.UserInputPanel>
@@ -64,7 +65,7 @@
 </com.izforge.izpack.panels.UserInputPanel>
 <com.izforge.izpack.panels.UserInputPanel id="operatingMode">
 <userInput>
-<entry key="operatingMode" value="development.core"/>
+<entry key="operatingMode" value="development"/>
 <entry key="operatingMode.configure.cluster" value="false"/>
 <entry key="operatingMode.configure.ldap" value="false"/>
 </userInput>
@@ -78,9 +79,9 @@
 <com.izforge.izpack.panels.UserInputPanel id="superUser">
 <userInput>
 <entry key="superUser.password" value="root"/>
-<entry key="superUser.firstname" value="root"/>
-<entry key="superUser.lastname" value="toor"/>
-<entry key="superUser.email" value="root@toor.com"/>
+<entry key="superUser.firstname" value=""/>
+<entry key="superUser.lastname" value=""/>
+<entry key="superUser.email" value=""/>
 <entry key="superUser.preferredLang" value="en"/>
 </userInput>
 </com.izforge.izpack.panels.UserInputPanel>
@@ -116,19 +117,17 @@
 </com.izforge.izpack.panels.UserInputPanel>
 <com.izforge.izpack.panels.UserInputPanel id="externalizedConfig">
 <userInput>
-<entry key="externalizedConfigTargetPath" value="/usr/local/DigitalExperienceManager-EnterpriseDistribution-7.1.1.0/digital-factory-config"/>
-<entry key="data.dir" value="/usr/local/DigitalExperienceManager-EnterpriseDistribution-7.1.1.0/digital-factory-data"/>
+<entry key="externalizedConfigTargetPath" value="/opt/Jahia/digital-factory-config"/>
+<entry key="data.dir" value="/opt/Jahia/digital-factory-data"/>
 </userInput>
 </com.izforge.izpack.panels.UserInputPanel>
 <com.izforge.izpack.panels.SummaryPanel id="UNKNOWN (com.izforge.izpack.panels.SummaryPanel)"/>
 <com.izforge.izpack.panels.ExtendedInstallPanel id="UNKNOWN (com.izforge.izpack.panels.ExtendedInstallPanel)"/>
 <com.izforge.izpack.panels.ShortcutPanel id="shortcutPanel"/>
 <com.izforge.izpack.panels.UserInputPanel id="afterInstall">
-<userInput>
-<entry key="afterInstall.startTomcat" value="true"/>
-<entry key="afterInstall.launchJahia" value="false"/>
-</userInput>
+<userInput/>
 </com.izforge.izpack.panels.UserInputPanel>
 <com.izforge.izpack.panels.ProcessPanel id="UNKNOWN (com.izforge.izpack.panels.ProcessPanel)"/>
 <com.izforge.izpack.panels.FinishPanel id="UNKNOWN (com.izforge.izpack.panels.FinishPanel)"/>
 </AutomatedInstallation>
+
