@@ -2,7 +2,6 @@ version: '2'
 services:
   web:
     build: ./web
-    hostname: Jahia-CMS
     ports:
       - "8080:8080"
     depends_on:
@@ -12,7 +11,6 @@ services:
 
   db:
     build: ./db
-    hostname: Jahia-DB
     environment:
       - CREATEDB=true
       - MYSQL_CLIENT=%
