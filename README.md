@@ -1,5 +1,13 @@
-Jahia Digital Factory install with Docker and Docker-Compose
+# Jahia Digital Factory install with Docker and Docker-Compose
 
-Docker Compose is built two containers first is for Web and other is for DB
+## Explanations
 
-You need to first create individual docker image for each service
+Docker Compose will build two containers:
+* a MySQL database
+* a Jahia app
+
+## Usage
+
+You can start both containers using `docker-compose up`.
+
+Then you can visit your app at `http://localhost:8080`.

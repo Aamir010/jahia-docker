@@ -1,20 +1,14 @@
 version: '2'
 services:
   web:
-    image: jahia-web
-    hostname: Jahia-CMS
+    build: ./web
     ports:
       - "8080:8080"
     depends_on:
       - db
-    links:
-      - db:db
 
   db:
-    image: jahia-db
-    hostname: Jahia-DB
-    ports:
-      - "3306:3306"
+    build: ./db
     environment:
       - CREATEDB=true
       - MYSQL_CLIENT=%
